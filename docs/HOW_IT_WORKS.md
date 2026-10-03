@@ -1,139 +1,151 @@
 # How Llavero works
 
-## Scope
+Llavero is a local terminal project for reviewing data-access requests, granting or revoking permission, and reading a local record. The agreement limits its example to synthetic data and reversible local effects. There is no institutional connection, external store, network call, blockchain, or real-world access.
 
-Llavero is a local terminal project for reviewing data-access requests, granting or revoking permission, and reading a local record of completed and blocked attempts. All records and sample data are synthetic. There is no institutional connection, external data store, network call, blockchain, or real-world access.
+## The unit: one permission
 
-## Participants and rights
+A key names a purpose, a specific scope, a destination, and an expiry. Asking does not grant access. The person reviews the request and is the only actor who grants or revokes a key. A holder may delegate less authority than the key permits, never more.
 
-| Participant | What they may do | Boundary |
+The agreement also describes a human decision before access, receipts for grants, revocations, accesses, and rejections, and verification separate from execution. These are agreed rules, not proof that every current test passes. See [Evidence](EVIDENCE.md).
+
+## Participants, rights, and limits
+
+| Participant | Right or role | Limit |
 |---|---|---|
-| Person | Review a request, grant or revoke a key, and read or keep the record | Only the person grants or revokes |
-| Requester | Ask for access with a stated purpose and destination | A request does not confer permission |
-| Holder | Use a granted key within its named scope, purpose, destination, and expiry | Delegation may narrow scope, never widen it |
-| Verifier | Recompute from the record which attempts occurred | It does not decide whether a request is truthful or lawful |
+| Person | Reviews a request, grants or revokes a key, reads or keeps the record | Only the person grants or revokes |
+| Requester | Asks for access with a declared purpose and destination | A request is not permission |
+| Holder | Presents a key for its named purpose, scope, destination, and expiry | Delegation can narrow scope, never widen it |
+| Verifier | Recomputes what the record supports | Cannot decide whether a request is true or lawful |
 
-## A request from beginning to end
+## A fictional request, from review to record
 
-Imagine one of the three fictional organizations asks to access one specific item in the synthetic data for persona-1, for its stated purpose. The person sees the requester, purpose, item, destination, and expiry before deciding whether to grant a key. The agreement does not name a real field or purpose, so this example keeps those details generic.
+This is a narrative of the agreed route, not a captured terminal run. The agreement identifies persona-1 and three fictional organizations but does not provide a specific data field, purpose, or destination, so the details stay generic.
 
-The holder presents the key with an access request. Llavero checks that it exists, is not revoked or expired, names the requested field and destination, and carries the same purpose. If these conditions hold, the local example store returns the example field and the record gets a receipt. This is access to data written for the project, not a real institution or person.
+A fictional organization requests one field in persona-1’s synthetic example data and declares a purpose, destination, and expiry. The person sees these details before granting a key or declining. If a holder presents the key for that same field, purpose, and destination before expiry, the agreed flow checks that the key exists and has not been revoked or expired before reading from the local example store. The access is simulated and is meant to be labelled that way. A receipt records the event; the person can read the JSONL record with an ordinary editor, and a separate verifier recalculates what the record supports.
 
-A different purpose or broader field is blocked with a reason and, when possible, a next step. Revoking the key blocks later attempts permanently. Repeating the same access key returns the first receipt instead of opening the example data again. The person can read the JSONL record with an ordinary editor, without Llavero.
+A different purpose is blocked in a passing test, as is access without a key. Permanent revocation, repeated-access idempotency, independent verification, and an access entry in the readable record are agreed expectations whose current tests fail. This route explains the design; it is not a claim that all of it is verified today.
 
-```
-requester asks: purpose + scope + destination
-                    |
-                    v
-person reviews and grants a key, or declines
-                    |
-                    v
-holder presents key -> purpose, scope, destination, expiry, revocation checked
-                    |
-          +---------+---------+
-          |                   |
-       allowed             blocked
-          |                   |
-          +------ receipt ----+
-                    |
-                    v
-        local readable JSONL record
-                    |
-                    v
-     separate verifier recomputes result
-```
+## Flow
 
-## Rules the project is meant to enforce
+<pre>
+requester declares purpose + scope + destination + expiry
+                            |
+                            v
+person reviews -> grants a key or declines
+                            |
+                            v
+holder presents key -> checks before local example access
+                            |
+                 +----------+----------+
+                 |                     |
+              allowed                blocked
+                 |                     |
+                 +------ receipt ------+
+                            |
+                            v
+                local readable JSONL record
+                            |
+                            v
+                 separate recomputation
+</pre>
 
-- **A request is not permission.** Access stays blocked until the person grants a key.
-- **A key has a purpose.** It is stated in the request and checked again at access time.
-- **A key has a narrow scope.** It names a specific piece of data. A holder may pass on less authority, never more.
-- **A key has a destination and expiry.** It cannot be used elsewhere and stops opening access after expiry.
-- **The person controls revocation.** Revoking a key blocks later use permanently for that key.
-- **Access happens once for the same access key.** A repeat returns the prior receipt.
-- **The record belongs to the person.** It is a local JSONL file readable outside the program.
-- **Verification recomputes.** The verifier calculates the outcome from the record, apart from the executor's summary.
-- **An impossible request comes back blocked.** The record gives a reason and names a way forward when one exists.
-- **A simulation is labelled.** Sample-store access is not presented as access to a real external system.
+The agreement says a receipt carries the requester, purpose, key, opened item, verifier check, and a content fingerprint. It names Vespi’s canonical digest and verifyReceipt. Evidence describes which related expectations pass in the supplied suite.
 
-These are the rules in the agreement and principles. The current suite has passing and failing expectations; this describes the agreed behavior, not a claim that every rule is verified against the installed kernel.
+## Rules and current verification
 
-## Receipts and records
+| Agreed rule | Meaning | Current test |
+|---|---|---|
+| Asking is not permission | Without a granted key, access is blocked | Pass |
+| Purpose must match | A different purpose is blocked | Pass |
+| Scope names one item | The key does not open all of a person’s data | Pass |
+| Destination and expiry apply | The key cannot travel elsewhere or stay valid past expiry | Pass |
+| Delegation narrows | A holder cannot pass on more authority than received | Pass |
+| Revocation is permanent | Later uses of the key stay blocked | Fail |
+| Same access runs once | A repeat returns the first receipt | Fail |
+| Verification recalculates | The verifier does not trust only the executor’s green result | Fail |
+| The person’s record is readable | The access appears in a file readable outside Llavero | Fail |
+| Receipt integrity is checked | A hand-edited receipt does not verify | Pass |
 
-The agreement says each grant, revocation, access, and rejection leaves a receipt with who requested access, purpose, key, what was opened, what the verifier checked, and a content fingerprint. Receipts use the kernel's canonical digest and `verifyReceipt`; hand-editing a receipt should make verification fail. The record is local and readable without Llavero.
+The supplied run reports 14 tests: 8 pass and 6 fail. These results describe tests, not a real deployment.
 
-## What this demonstrates, and what it does not
+## What it shows, and what it does not
 
-The project demonstrates a local flow over synthetic sample data, with grants, revocations, access attempts, rejections, receipts, and tests. The agreement and phase notes describe a complete terminal walkthrough and a suite run in the original pinned-kernel context.
+The agreement, principles, and test names describe a local permission flow over synthetic data. The phase record says a complete walkthrough was previously reproduced against Vespi cut 54c20c7, but the public sources contain no original terminal transcript. Llavero does not establish identity, real consent, a requester’s legal right, truth of a declared purpose, legal compliance, or readiness for production. It does not retrieve real information from an organization. See [Legal and limits](LEGAL_AND_LIMITS.md).
 
-It does not demonstrate access to real personal data, an institution, a third-party system, or a network service. It does not establish legal compliance, identity, consent in a real setting, truth of a request, or fitness for production. For current suite results and the historical kernel context, see [Evidence](EVIDENCE.md).
+---
 
 ## Español
 
-### Alcance
+# Cómo funciona Llavero
 
-Llavero es un proyecto local de terminal para revisar solicitudes de acceso a datos, conceder o revocar permisos y leer un registro local de intentos permitidos y bloqueados. Todos los registros y datos de ejemplo son sintéticos. No hay conexión institucional, almacén externo, llamada de red, blockchain ni acceso real.
+Llavero es un proyecto local de terminal para revisar solicitudes de acceso a datos, conceder o revocar permisos y leer un registro local. El acuerdo limita el ejemplo a datos sintéticos y efectos locales reversibles. No hay conexión institucional, almacén externo, llamada de red, blockchain ni acceso real.
 
-### Participantes y derechos
+## La unidad: un permiso
 
-| Participante | Qué puede hacer | Límite |
+Una llave declara un propósito, un alcance concreto, un destino y un vencimiento. Pedir no concede acceso. La persona revisa la solicitud y es la única que concede o revoca una llave. Un portador puede delegar menos autoridad de la que permite la llave, nunca más.
+
+El acuerdo también describe una decisión humana antes del acceso, comprobantes para concesiones, revocaciones, accesos y rechazos, y una verificación separada de la ejecución. Son reglas acordadas, no pruebas de que toda expectativa pase hoy. Consulta [Evidencia](EVIDENCE.md).
+
+## Participantes, derechos y límites
+
+| Participante | Derecho o función | Límite |
 |---|---|---|
-| Persona | Revisar solicitudes, conceder o revocar una llave y leer o guardar el registro | Solo la persona concede o revoca |
-| Solicitante | Pedir acceso con propósito y destino declarados | Pedir no concede permiso |
-| Portador | Usar una llave dentro de su alcance, propósito, destino y vencimiento | Al delegar puede reducir el alcance, nunca ampliarlo |
-| Verificador | Recalcular desde el registro qué intentos ocurrieron | No decide si la solicitud es verdadera o lícita |
+| Persona | Revisa solicitudes, concede o revoca una llave, lee o guarda el registro | Solo ella concede o revoca |
+| Solicitante | Pide acceso con propósito y destino declarados | Pedir no es tener permiso |
+| Portador | Presenta una llave para su propósito, alcance, destino y vencimiento | Al delegar puede reducir el alcance, nunca ampliarlo |
+| Verificador | Recalcula lo que respalda el registro | No puede decidir si una solicitud es verdadera o lícita |
 
-### Una solicitud de principio a fin
+## Una solicitud ficticia, de la revisión al registro
 
-Imagina que una de las tres organizaciones ficticias pide acceder a un dato concreto de los datos sintéticos de persona-1 para el propósito que declara. Antes de decidir si concede una llave, la persona ve quién solicita, el propósito, el dato, el destino y el vencimiento. El acuerdo no nombra un campo ni un propósito real, así que este ejemplo mantiene esos detalles generales.
+Este relato describe el recorrido acordado, no una corrida de terminal capturada. El acuerdo identifica a persona-1 y tres organizaciones ficticias, pero no especifica un campo, propósito o destino; por eso los detalles se mantienen generales.
 
-El portador presenta la llave con una solicitud. Llavero comprueba que exista, que no esté revocada ni vencida, que nombre el campo y destino solicitados y que tenga el mismo propósito. Si se cumplen esas condiciones, el almacén local devuelve el campo de ejemplo y el registro recibe un comprobante. Es acceso a datos escritos para el proyecto, no a una institución ni a una persona real.
+Una organización ficticia pide un campo de los datos sintéticos de ejemplo de persona-1 y declara un propósito, un destino y un vencimiento. La persona ve esos detalles antes de conceder una llave o rechazar. Si un portador presenta la llave para ese mismo campo, propósito y destino antes del vencimiento, el recorrido acordado comprueba que la llave exista y no se haya revocado ni vencido antes de consultar el almacén local de ejemplos. El acceso es simulado y debe identificarse como tal. Un comprobante registra el evento; la persona puede leer el JSONL con un editor común y un verificador separado recalcula lo que respalda el registro.
 
-Un propósito distinto o un campo más amplio se bloquea con una razón y, cuando existe, un siguiente paso. Revocar la llave bloquea permanentemente los intentos posteriores. Si se repite la misma clave de acceso, se devuelve el comprobante inicial sin abrir los datos otra vez. La persona puede leer el JSONL con un editor común, sin Llavero.
+Una prueba aprobada bloquea un propósito distinto, y otra bloquea el acceso sin llave. Las expectativas de revocación permanente, idempotencia de un acceso repetido, verificación independiente y entrada de acceso en el registro legible tienen pruebas que hoy fallan. El recorrido explica el diseño, pero no afirma que esté todo verificado.
 
-```
-solicitante pide: propósito + alcance + destino
-                    |
-                    v
-persona revisa y concede una llave o rechaza
-                    |
-                    v
-portador presenta llave -> se comprueban propósito, alcance, destino, vencimiento, revocación
-                    |
-          +---------+---------+
-          |                   |
-      permitido             bloqueado
-          |                   |
-          +---- comprobante --+
-                    |
-                    v
-          registro JSONL local y legible
-                    |
-                    v
-       verificador aparte recalcula el resultado
-```
+## Recorrido
 
-### Reglas que el proyecto busca hacer cumplir
+<pre>
+solicitante declara propósito + alcance + destino + vencimiento
+                              |
+                              v
+persona revisa -> concede una llave o rechaza
+                              |
+                              v
+portador presenta llave -> comprobar antes del acceso local
+                              |
+                   +----------+----------+
+                   |                     |
+                permitido             bloqueado
+                   |                     |
+                   +---- comprobante ----+
+                              |
+                              v
+                  registro JSONL legible
+                              |
+                              v
+                    recálculo separado
+</pre>
 
-- **Pedir no es tener permiso.** El acceso sigue bloqueado hasta que la persona concede una llave.
-- **La llave tiene propósito.** Se declara al pedir y se vuelve a comprobar al acceder.
-- **La llave tiene alcance acotado.** Nombra un dato concreto. El portador puede transmitir menos autoridad, nunca más.
-- **La llave tiene destino y vencimiento.** No sirve en otro destino y deja de abrir el acceso al vencer.
-- **La persona controla la revocación.** Revocar una llave bloquea su uso posterior para siempre.
-- **Una misma clave de acceso se ejecuta una vez.** Si se repite, devuelve el comprobante anterior.
-- **El registro pertenece a la persona.** Es un archivo JSONL que se puede leer fuera del programa.
-- **Verificar es recalcular.** El verificador calcula el resultado desde el registro, aparte del resumen del ejecutor.
-- **Una solicitud imposible vuelve bloqueada.** El registro da la razón y nombra una salida cuando existe.
-- **La simulación se etiqueta.** El acceso al almacén de ejemplo no se presenta como acceso a un sistema real.
+El acuerdo dice que el comprobante incluye al solicitante, propósito, llave, dato abierto, comprobación del verificador y huella del contenido. Nombra el digest canónico de Vespi y verifyReceipt. Evidencia indica cuáles expectativas relacionadas pasan en la suite suministrada.
 
-Estas son las reglas del acuerdo y los principios. La suite actual tiene expectativas aprobadas y fallidas; esto describe el comportamiento acordado, sin afirmar que cada regla esté verificada contra el kernel instalado.
+## Reglas y verificación actual
 
-### Comprobantes y registros
+| Regla acordada | Significado | Prueba actual |
+|---|---|---|
+| Pedir no es tener permiso | Sin una llave concedida, se bloquea el acceso | Pasa |
+| El propósito debe coincidir | Se bloquea un propósito distinto | Pasa |
+| El alcance nombra un dato | La llave no abre todos los datos de la persona | Pasa |
+| Aplican destino y vencimiento | La llave no sirve en otro destino ni después de vencer | Pasa |
+| La delegación reduce | El portador no pasa más autoridad de la recibida | Pasa |
+| La revocación es permanente | Los usos posteriores siguen bloqueados | Falla |
+| El mismo acceso se ejecuta una vez | Si se repite, devuelve el primer comprobante | Falla |
+| La verificación recalcula | El verificador no confía solo en el resultado verde del ejecutor | Falla |
+| El registro de la persona es legible | El acceso aparece en un archivo que se abre fuera de Llavero | Falla |
+| Se comprueba la integridad | Un comprobante editado a mano no verifica | Pasa |
 
-El acuerdo dice que cada concesión, revocación, acceso y rechazo deja un comprobante con quién pidió acceso, el propósito, la llave, qué se abrió, qué comprobó el verificador y una huella del contenido. Los comprobantes usan el digest canónico del kernel y `verifyReceipt`; una edición manual debería hacer fallar la verificación. El registro es local y legible sin Llavero.
+La corrida suministrada informa 14 pruebas: 8 pasan y 6 fallan. Estos resultados describen pruebas, no un despliegue real.
 
-### Qué demuestra y qué no
+## Qué muestra y qué no
 
-El proyecto muestra un recorrido local con datos sintéticos, concesiones, revocaciones, intentos de acceso, rechazos, comprobantes y pruebas. El acuerdo y las notas de fases describen un recorrido completo de terminal y una suite ejecutada en el contexto original del kernel fijado.
-
-No demuestra acceso a datos personales reales, a una institución, a un sistema de terceros ni a un servicio de red. No establece cumplimiento legal, identidad, consentimiento real, veracidad de una solicitud ni preparación para producción. Para ver los resultados actuales de la suite y el contexto histÃ³rico del kernel, consulta [Evidencia](EVIDENCE.md).
+El acuerdo, los principios y los nombres de pruebas describen un flujo local de permisos con datos sintéticos. El registro de fases dice que un recorrido completo se reprodujo antes contra el corte de Vespi 54c20c7, pero las fuentes públicas no incluyen la transcripción original de terminal. Llavero no establece identidad, consentimiento real, derecho legal del solicitante, veracidad de un propósito declarado, cumplimiento jurídico ni preparación para producción. No obtiene información real de una organización. Consulta [Marco legal y límites](LEGAL_AND_LIMITS.md).

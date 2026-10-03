@@ -1,97 +1,93 @@
 # Evidence
 
-## Current suite result
+This page separates the supplied current test record from the earlier adversarial phase. They describe different moments in the project.
 
-The supplied `suite-hoy.txt` reports 14 tests: 8 pass and 6 fail. One failure is a mismatch between the installed kernel digest and the project's pinned digest. The output also lists five failed behavior expectations: cumulative budget, permanent revocation, same-access idempotency, the independent verifier rejecting an executor-only green result, and an access entry in the person's readable record.
+## Current suite: 8 pass, 6 fail
 
-The phase record says nine adversarial red cases were written and observed before implementation, and that implementation and a complete walkthrough were completed against Vespi kernel cut `54c20c7`. The project consumes the kernel by digest and is designed to fail when the kernel changes. The current result is not clean: the digest needs to be pinned again for the installed kernel, and the five behavior failures named above also need to be resolved or explained before a green result can be claimed. The project shows a working path, not a finished product.
+The test run consulted for this evidence page reports 14 tests: 8 pass and 6 fail. The results follow its test names and output.
 
-## Tests grouped by what they check
+| Area | Test expectation | Result |
+|---|---|---|
+| Kernel pin | The consumed kernel matches the pinned cut module by module | Fail: continuity.js has a different digest |
+| Module provenance | Five module headers declare the same commit | Pass |
+| Permission | Access without a key is blocked and returned to the person | Pass |
+| Expiry | An expired key does not open access | Pass |
+| Destination | A key cannot travel to another destination | Pass |
+| Scope | Scope names one item, not “the data” | Pass |
+| Budget | A hard budget accumulates across accesses | Fail |
+| Purpose | A different purpose does not open access | Pass |
+| Revocation | Revocation blocks from that moment and does not undo itself | Fail |
+| Delegation | A holder cannot pass more authority than the key grants | Pass |
+| Idempotency | The same access does not run twice and returns its first receipt | Fail |
+| Receipt integrity | A hand-edited receipt does not verify | Pass |
+| Independent verification | A verifier that trusts only the executor cannot return green | Fail |
+| Readable record | The person’s file contains an access entry readable without Llavero | Fail |
 
-Names below are copied from `suite-hoy.txt`.
+The names and statuses come from the supplied run. A passing test supports that expectation in its test context; it does not show a real institutional deployment.
 
-### Kernel pin and version
+## Why the kernel pin fails
 
-- `el núcleo que consume Llavero es el corte fijado, módulo por módulo` : fails because `continuity.js` has a different digest than expected.
-- `el encabezado de los cinco módulos declara el mismo commit` : passes.
+Llavero consumes the shared Vespi kernel and fixes the expected files by digest. A digest fingerprints file contents. If a pinned module changes, its comparison fails rather than silently treating the new contents as the reviewed cut. The current run says continuity.js has a digest different from the expected one. That is one failure, separate from the five behavior failures above.
 
-### Permission boundaries and keys
-
-- `pedir no es tener: sin llave, el acceso se bloquea y vuelve a la persona` : passes.
-- `la llave vencida no abre y el bloqueo dice cuándo murió` : passes.
-- `la llave no viaja a otro destino y el bloqueo nombra los dos` : passes.
-- `el alcance es un dato, no «los datos»` : passes.
-- `el presupuesto es un límite duro y se acumula entre accesos` : fails.
-- `un acceso con otro propósito no abre: la llave dice para qué` : passes.
-- `la revocación cierra la puerta desde ese momento y no se reactiva sola` : fails.
-- `un portador no puede pasar más de lo que su llave le da` : passes.
-- `el mismo acceso no se ejecuta dos veces: el segundo devuelve el recibo del primero` : fails.
-
-### Receipt integrity and independent verification
-
-- `un recibo editado a mano no verifica` : passes.
-- `un verificador que solo cree al ejecutor no puede producir un verde en la auditoría` : fails.
-- `el registro es un archivo que la persona puede abrir sin Llavero` : fails.
-
-The agreement requires nine adversarial red cases to be written before code and observed failing. The current suite names include red cases kept as regression expectations. The phase notes say the original red failures were observed before implementation; the supplied current suite reports a later outcome after the kernel changed. These are different moments.
+The phase record says implementation and a complete walkthrough were previously run against Vespi cut 54c20c7. The current suite is later. The sources do not establish why the installed module changed, so this page does not guess or update the pin.
 
 ## What the adversarial phase found
 
-The agreement's nine red cases cover the project boundaries: no access without a key, purpose matching, narrow scope, expiry, permanent revocation, single execution, independent recomputation, readable local history, and a reasoned blocked outcome. The principles also require visible labels for simulations and synthetic data.
+The agreement requires nine red cases to be written before implementation and observed failing. Their boundaries are: no access without a key, matching purpose, narrow scope, expiry, permanent revocation, one execution, independent recomputation, readable local history, and a reasoned blocked outcome. The principles also require simulated access and synthetic data to be identified.
 
-The current suite output gives names and results, but this public repository does not contain the original nine pre-code failure logs as separate artifacts. The phase file says those logs were observed and saved in private project materials. This repository reports that phase record and the current named results without claiming readers can inspect those original logs here.
+The phase record says the nine initial failures were observed and saved in private project material. This public repository does not include those original logs. The current suite retains named regression expectations, some passing and some failing. The historical red phase and the supplied 8/14 result are separate records.
 
-## How to rerun when the code opens
+## What reviewers can inspect
 
-During the judges' review period, source code will be published under the review-only license. From the project root, run `npm test`, the package's test command. Treat the output as a fresh run against the kernel version and digests present then. A passing result is reportable only after the kernel pin has been reviewed and the current behavior failures resolved or explained.
+This public repository contains agreement-derived documentation and a summary of the current test result; it does not include the raw test output, source code, or a full transcript of the historical terminal walkthrough. The package identifies npm test as its test command; running it when source is available would produce a new result against the kernel files and digests present then. A green claim would require a reviewed kernel pin and resolved or explained behavior failures.
 
-Llavero's evidence includes no testnet transaction, public chain anchor, institutional integration, or external access. The agreement specifies a local, reversible effect using synthetic example data only.
+There is no testnet transaction, public chain anchor, institutional integration, network access, or external data access in the evidence. The agreement specifies a local, reversible effect using synthetic example data only.
+
+---
 
 ## Español
 
-### Resultado actual de la suite
+# Evidencia
 
-El archivo suministrado `suite-hoy.txt` informa 14 pruebas: 8 pasan y 6 fallan. Un fallo es una diferencia entre el digest del kernel instalado y el digest fijado por el proyecto. La salida también enumera cinco expectativas de comportamiento fallidas: presupuesto acumulativo, revocación permanente, idempotencia del mismo acceso, el verificador independiente que rechaza un resultado verde basado solo en el ejecutor y una entrada de acceso en el registro legible por la persona.
+Esta página separa el registro actual de pruebas de la fase adversarial anterior. Describen momentos distintos del proyecto.
 
-El registro de fases dice que nueve casos rojos adversariales se escribieron y observaron antes de implementar, y que la implementación y un recorrido completo se terminaron contra el corte de kernel Vespi `54c20c7`. El proyecto consume el kernel mediante digest y está diseñado para fallar cuando cambia. El resultado actual no está limpio: hay que volver a fijar el digest para el kernel instalado y también resolver o explicar los cinco fallos de comportamiento antes de afirmar que la suite está verde. El proyecto muestra un camino funcional, no un producto terminado.
+## Suite actual: 8 pasan y 6 fallan
 
-### Pruebas agrupadas por lo que comprueban
+La corrida consultada para esta página de evidencia informa 14 pruebas: 8 pasan y 6 fallan. Los resultados siguen sus nombres y salida.
 
-Los nombres siguientes se copian de `suite-hoy.txt`.
+| Área | Expectativa de la prueba | Resultado |
+|---|---|---|
+| Fijación del kernel | El kernel consumido coincide módulo por módulo con el corte fijado | Falla: continuity.js tiene otro digest |
+| Procedencia de módulos | Los encabezados de cinco módulos declaran el mismo commit | Pasa |
+| Permiso | Sin llave, se bloquea el acceso y vuelve a la persona | Pasa |
+| Vencimiento | La llave vencida no abre el acceso | Pasa |
+| Destino | La llave no se usa en otro destino | Pasa |
+| Alcance | El alcance nombra un dato, no “los datos” | Pasa |
+| Presupuesto | El límite se acumula entre accesos | Falla |
+| Propósito | Un propósito distinto no abre el acceso | Pasa |
+| Revocación | Revocar bloquea desde ese momento y no se deshace sola | Falla |
+| Delegación | El portador no pasa más autoridad que la concedida | Pasa |
+| Idempotencia | El mismo acceso no se ejecuta dos veces y devuelve su primer comprobante | Falla |
+| Integridad | Un comprobante editado a mano no verifica | Pasa |
+| Verificación independiente | Un verificador que solo cree al ejecutor no puede dar verde | Falla |
+| Registro legible | El archivo incluye el acceso y se lee sin Llavero | Falla |
 
-#### Fijación y versión del kernel
+Los nombres y estados vienen de la corrida suministrada. Que una prueba pase respalda esa expectativa en su contexto de prueba; no demuestra un despliegue institucional real.
 
-- `el núcleo que consume Llavero es el corte fijado, módulo por módulo` : falla porque `continuity.js` tiene un digest distinto del esperado.
-- `el encabezado de los cinco módulos declara el mismo commit` : pasa.
+## Por qué falla la fijación del kernel
 
-#### Límites de permiso y llaves
+Llavero consume el kernel compartido de Vespi y fija por digest los archivos esperados. El digest es una huella del contenido. Si cambia un módulo fijado, la comparación falla en vez de tratar silenciosamente el contenido nuevo como el corte ya revisado. La corrida actual dice que continuity.js tiene un digest distinto del esperado. Es un fallo, separado de los cinco fallos de comportamiento de la tabla.
 
-- `pedir no es tener: sin llave, el acceso se bloquea y vuelve a la persona` : pasa.
-- `la llave vencida no abre y el bloqueo dice cuándo murió` : pasa.
-- `la llave no viaja a otro destino y el bloqueo nombra los dos` : pasa.
-- `el alcance es un dato, no «los datos»` : pasa.
-- `el presupuesto es un límite duro y se acumula entre accesos` : falla.
-- `un acceso con otro propósito no abre: la llave dice para qué` : pasa.
-- `la revocación cierra la puerta desde ese momento y no se reactiva sola` : falla.
-- `un portador no puede pasar más de lo que su llave le da` : pasa.
-- `el mismo acceso no se ejecuta dos veces: el segundo devuelve el recibo del primero` : falla.
+El registro de fases dice que la implementación y un recorrido completo se ejecutaron antes contra el corte de Vespi 54c20c7. La suite actual es posterior. Las fuentes no establecen por qué cambió el módulo, así que esta página no adivina ni actualiza la fijación.
 
-#### Integridad de comprobantes y verificación independiente
+## Qué encontró la fase adversarial
 
-- `un recibo editado a mano no verifica` : pasa.
-- `un verificador que solo cree al ejecutor no puede producir un verde en la auditoría` : falla.
-- `el registro es un archivo que la persona puede abrir sin Llavero` : falla.
+El acuerdo exige escribir nueve casos rojos antes de implementar y observarlos fallar. Sus límites son: bloquear el acceso sin llave, exigir que coincida el propósito, limitar el alcance, aplicar el vencimiento, mantener la revocación permanente, ejecutar una sola vez, recalcular de forma independiente, conservar un historial local legible y dar una razón para el bloqueo. Los principios también exigen identificar el acceso simulado y los datos sintéticos.
 
-El acuerdo requiere escribir los nueve casos rojos adversariales antes del código y observarlos fallar. Los nombres actuales incluyen casos rojos conservados como expectativas de regresión. Las notas de fases dicen que los fallos originales se observaron antes de implementar; la suite suministrada informa un resultado posterior al cambio del kernel. Son momentos distintos.
+El registro de fases dice que los nueve fallos iniciales se observaron y guardaron en material privado. El repositorio público no incluye esos registros originales. La suite actual conserva expectativas de regresión con nombre, unas aprobadas y otras fallidas. La fase roja histórica y el resultado suministrado de 8/14 son registros distintos.
 
-### Qué encontró la fase adversarial
+## Qué pueden inspeccionar quienes revisan
 
-Los nueve casos rojos del acuerdo cubren estos límites: no permitir acceso sin llave, exigir que coincida el propósito, mantener el alcance acotado, aplicar el vencimiento, conservar la revocación permanente, ejecutar una sola vez, recalcular de forma independiente, mantener un historial local legible y dar una razón para el bloqueo. Los principios también exigen identificar las simulaciones y los datos sintéticos.
+Este repositorio público contiene documentación derivada del acuerdo y un resumen del resultado actual; no incluye la salida bruta de las pruebas, el código fuente ni una transcripción completa del recorrido histórico en terminal. El paquete indica npm test como comando de pruebas; al estar disponible el código, ejecutarlo daría un resultado nuevo para los archivos y digests del kernel de ese momento. Para afirmar que la suite está verde, habría que revisar la fijación del kernel y resolver o explicar los fallos de comportamiento.
 
-La suite actual da nombres y resultados, pero este repositorio público no contiene los registros originales de los nueve fallos previos al código como artefactos separados. El archivo de fases dice que se observaron y guardaron en material privado. Aquí se informa esa fase y los resultados actuales con nombre, sin afirmar que se puedan inspeccionar aquellos registros.
-
-### Cómo volver a correrla cuando se abra el código
-
-Durante el periodo de los jueces se publicará el código fuente bajo la licencia de solo revisión. Desde la raíz del proyecto, ejecuta `npm test`, el comando de pruebas del paquete. Lee su salida como una corrida nueva contra la versión y los digests del kernel disponibles entonces. Solo se debe informar una suite aprobada después de revisar la fijación del kernel y resolver o explicar los fallos actuales de comportamiento.
-
-La evidencia de Llavero no incluye transacciones de testnet, anclajes públicos, integración institucional ni acceso externo. El acuerdo especifica un efecto local y reversible, solo con datos sintéticos de ejemplo.
+La evidencia no incluye transacciones de testnet, anclajes públicos a una cadena, integración institucional, acceso a la red ni acceso externo a datos. El acuerdo especifica un efecto local y reversible con datos sintéticos de ejemplo.

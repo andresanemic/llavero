@@ -1,55 +1,61 @@
 # Legal and limits
 
-## What the agreement cites
+Llavero explores a narrow design question: can a person inspect a request about their data before deciding whether to grant access, then read a local record of what happened? It makes no legal finding and does not show that a real organization follows this design.
 
-The project agreement cites Chile's Law 21.719 as the problem Llavero is meant to make visible. It says the primary law was not read during this phase and that the implementation was not checked against it. The project marks this point `NO VERIFICADO`. The citation is design context only, not a claim of compliance.
+## The law named in the agreement
 
-No competent legal professional has reviewed the project's legal position, and this repository is not legal advice. The agreement cites no other statute or regulation as a design basis.
+The agreement cites Chile’s Law 21.719 as context for the problem. It says the primary law was not read during this phase and the implementation was not checked against it, and marks the point NO VERIFICADO. The citation is design context, not a compliance claim.
 
-## What Llavero does not claim
+No legal professional has reviewed the project’s legal position. This repository is not legal advice, and the agreement names no other statute or regulation as a design basis.
+
+## What Llavero does not establish
 
 - It does not claim compliance with Law 21.719 or any other law or standard.
-- It does not establish real consent, civil identity, or a real requester's right to data.
-- It does not connect to an institution, hold real personal data, or record real third-party access.
-- It does not claim production readiness or a completed product.
-- It makes no legal finding about the truth, lawfulness, or purpose of a request.
+- It does not establish civil identity, real consent, or a requester’s real right to data.
+- It does not connect to an institution, store real personal data, or record real third-party access.
+- It does not establish the truth, lawfulness, or purpose of a request.
+- It does not claim production readiness or that it is a finished product.
+- It does not provide emergency access; the agreement excludes that kernel capability from this project’s scope.
 
-All example records and identities are synthetic. The agreement says there is no real personal, health, financial, or third-party data.
+All sample identities and records are synthetic. The agreement says there is no real personal, health, financial, or third-party data. Effects are local and reversible; there is no network, external integration, blockchain, or testnet anchor.
 
-## Open questions
+## Questions that remain open
 
-- What legal review would be needed before any real-world use?
-- What identity, consent, access, retention, correction, and deletion requirements would apply in a real deployment?
-- What safeguards and accountability would an institution need before relying on such a record?
-- How could a person challenge an inaccurate request or record in a real system?
-- What legal effect, if any, would a local receipt or verifier result have outside this synthetic project?
+Any real-world use would need its own legal and operational assessment. The agreement leaves open what review would be needed, which identity, consent, access, retention, correction, and deletion rules would apply, what safeguards an institution would need, how a person could challenge an inaccurate record, and what legal effect a local receipt could have outside this synthetic project. These are questions, not conclusions.
 
-These are questions, not conclusions supplied by the project. Real use would need its own legal and operational assessment.
+## Read alongside the evidence
+
+The agreed rules and current test result are different things. The supplied suite reports 8 passes and 6 failures; [Evidence](EVIDENCE.md) lists the failed expectations and explains the kernel digest pin. A passing test does not make the project legally compliant or ready for real-world use.
+
+---
 
 ## Español
 
-### Lo que cita el acuerdo
+# Marco legal y límites
 
-El acuerdo cita la Ley 21.719 de Chile como el problema que Llavero busca hacer visible. Dice que la ley primaria no se leyó durante esta fase y que la implementación no se contrastó con ella. El proyecto marca este punto como `NO VERIFICADO`. La cita da contexto al diseño, no afirma cumplimiento.
+Llavero explora una pregunta acotada de diseño: ¿puede una persona inspeccionar una solicitud sobre sus datos antes de decidir si concede acceso y después leer un registro local de lo ocurrido? No emite un juicio jurídico ni demuestra que una organización real siga este diseño.
 
-Ninguna persona competente en derecho ha revisado la posición jurídica del proyecto y este repositorio no es asesoría legal. El acuerdo no cita otra ley o norma como base del diseño.
+## La ley que nombra el acuerdo
 
-### Lo que Llavero no afirma
+El acuerdo cita la Ley 21.719 de Chile como contexto del problema. Dice que durante esta fase no se leyó la ley primaria ni se contrastó con ella la implementación, y marca el punto como NO VERIFICADO. La cita da contexto al diseño, no afirma cumplimiento.
 
-- No afirma cumplir la Ley 21.719 ni otra norma o ley.
-- No establece consentimiento real, identidad civil ni que un solicitante real tenga derecho a los datos.
-- No se conecta con una institución, no conserva datos personales reales ni registra accesos reales de terceros.
+Ningún profesional del derecho revisó la posición jurídica del proyecto. Este repositorio no es asesoría legal y el acuerdo no nombra otra ley o norma como base del diseño.
+
+## Qué no establece Llavero
+
+- No afirma cumplir la Ley 21.719 ni otra ley o norma.
+- No establece identidad civil, consentimiento real ni un derecho real del solicitante a los datos.
+- No se conecta con una institución, guarda datos personales reales ni registra accesos reales de terceros.
+- No establece la veracidad, legalidad o propósito de una solicitud.
 - No afirma estar listo para producción ni ser un producto terminado.
-- No emite conclusiones jurídicas sobre la veracidad, legalidad o propósito de una solicitud.
+- No ofrece acceso de emergencia; el acuerdo excluye esa capacidad del kernel del alcance de este proyecto.
 
-Todos los registros e identidades de ejemplo son sintéticos. El acuerdo dice que no hay datos personales reales, de salud, financieros ni de terceros.
+Todas las identidades y registros de ejemplo son sintéticos. El acuerdo dice que no hay datos reales personales, de salud, financieros ni de terceros. Los efectos son locales y reversibles; no hay red, integración externa, blockchain ni anclaje a testnet.
 
-### Preguntas abiertas
+## Preguntas abiertas
 
-- ¿Qué revisión jurídica se necesitaría antes de cualquier uso real?
-- ¿Qué requisitos de identidad, consentimiento, acceso, retención, corrección y eliminación aplicarían a un despliegue real?
-- ¿Qué salvaguardas y responsabilidades necesitaría una institución antes de confiar en el registro?
-- ¿Cómo podría una persona impugnar una solicitud o un registro incorrecto en un sistema real?
-- ¿Qué efecto jurídico, si alguno, tendría un comprobante local o un resultado del verificador fuera de este proyecto sintético?
+Cualquier uso real requeriría una evaluación jurídica y operativa propia. El acuerdo deja abiertas las preguntas sobre qué revisión sería necesaria, qué reglas de identidad, consentimiento, acceso, retención, corrección y eliminación aplicarían, qué salvaguardas necesitaría una institución, cómo podría una persona impugnar un registro inexacto y qué efecto jurídico tendría un comprobante local fuera de este proyecto sintético. Son preguntas, no conclusiones.
 
-Son preguntas, no conclusiones del proyecto. Un uso real requeriría una evaluación jurídica y operativa propia.
+## Leer junto con la evidencia
+
+Las reglas acordadas y el resultado actual de las pruebas son cosas distintas. La suite suministrada informa 8 aprobadas y 6 fallidas; [Evidencia](EVIDENCE.md) enumera las expectativas fallidas y explica la fijación por digest del kernel. Una prueba aprobada no vuelve al proyecto legalmente conforme ni listo para uso real.
