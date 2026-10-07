@@ -8,6 +8,7 @@
   <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-8_of_14-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 8 of 14"></a>
   <a href="#english"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_candidate-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 candidate (commit ed559e8)"></a>
 </p>
 
 <p align="center">
@@ -114,7 +115,7 @@ It is not a real data custodian, an institutional integration, a consent dashboa
 
 The current supplied run reports **14 tests: 8 pass and 6 fail**. The passing expectations cover keyless access, expiry, destination matching, narrow scope, purpose matching, delegation that cannot widen scope, a receipt changed by hand, and matching module commit headers. The failures are one kernel digest pin and five behavior expectations: cumulative budget, permanent revocation, repeating the same access, independent verification, and the person's readable access record.
 
-The digest failure matters because the project pins the Vespi kernel by digest. The current suite reports that `continuity.js` differs from the expected digest, so a changed kernel is not silently treated as the reviewed one. That pin failure is separate from the five behavior failures. The adversarial phase records nine red cases written and observed before implementation, against Vespi cut `54c20c7`; the current supplied run is later and reports 8/14. The public repository does not include the original nine failure logs. See [Evidence](./docs/EVIDENCE.md) for names, scope, and chronology.
+The digest failure matters because the project pins the Vespi kernel by digest. The current suite reports that `continuity.js` differs from the expected digest, so a changed kernel is not silently treated as the reviewed one. That pin failure is separate from the five behavior failures. The adversarial phase records nine red cases written and observed before implementation, against Vespi cut `54c20c7`; the current supplied run is later and reports 8/14. The project now targets kernel **0.1.5 candidate** (commit `ed559e8`); the re-pinned digest table will be committed once the kernel release is confirmed. The public repository does not include the original nine failure logs. See [Evidence](./docs/EVIDENCE.md) for names, scope, and chronology.
 
 ## Llavero, Vespi, and Lore Plugin
 
@@ -242,7 +243,7 @@ No es un custodio real de datos, una integración institucional, un panel de con
 
 La corrida suministrada informa **14 pruebas: 8 pasan y 6 fallan**. Las expectativas aprobadas cubren el acceso sin llave, vencimiento, coincidencia del destino, alcance acotado, coincidencia del propósito, delegación que no amplía el alcance, un comprobante editado a mano y encabezados de módulos con el mismo commit. Los fallos son una fijación de digest del kernel y cinco expectativas de comportamiento: presupuesto acumulativo, revocación permanente, repetición del mismo acceso, verificación independiente y registro legible del acceso para la persona.
 
-El fallo del digest importa porque el proyecto fija el kernel de Vespi por digest. La suite actual informa que `continuity.js` no coincide con el digest esperado; así, un cambio del kernel no se toma en silencio como si fuera el mismo kernel revisado. Ese fallo de fijación es distinto de los cinco fallos de comportamiento. La fase adversarial registra nueve casos rojos escritos y observados antes de implementar, contra el corte de Vespi `54c20c7`; la corrida suministrada es posterior e informa 8/14. El repositorio público no incluye los registros originales de esos nueve fallos. [Evidencia](./docs/EVIDENCE.md) da los nombres, el alcance y la cronología.
+El fallo del digest importa porque el proyecto fija el kernel de Vespi por digest. La suite actual informa que `continuity.js` no coincide con el digest esperado; así, un cambio del kernel no se toma en silencio como si fuera el mismo kernel revisado. Ese fallo de fijación es distinto de los cinco fallos de comportamiento. La fase adversarial registra nueve casos rojos escritos y observados antes de implementar, contra el corte de Vespi `54c20c7`; la corrida suministrada es posterior e informa 8/14. El proyecto ahora apunta al kernel **0.1.5 candidato** (commit `ed559e8`); la tabla de digest fijada se commiteará una vez confirmado el release del kernel. El repositorio público no incluye los registros originales de esos nueve fallos. [Evidencia](./docs/EVIDENCE.md) da los nombres, el alcance y la cronología.
 
 ## Llavero, Vespi y Lore Plugin
 
