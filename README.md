@@ -121,6 +121,8 @@ The digest check matters because the project pins the Vespi kernel by digest: th
 
 The project agreement names Vespi's canonical receipt digest and `verifyReceipt`; Llavero is designed to consume that kernel without modifying it. The shared kernel supplies receipt sealing and verification mechanics described by the agreement. It does not make the sample data real, decide whether a request is lawful, or independently prove that every agreed behavior passes in the current checkout.
 
+**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
+
 Lore Plugin is the surrounding project-context and routing system: the project contract points to the agreement, principles, and phase record. It is not the permission store or the data-access service. This public repository contains documentation and evidence, not source code for those mechanics.
 
 ## What it does not do, and what is not verified
@@ -248,6 +250,8 @@ La comprobación del digest importa porque el proyecto fija el kernel de Vespi p
 ## Llavero, Vespi y Lore Plugin
 
 El acuerdo del proyecto nombra el digest canónico de comprobantes de Vespi y `verifyReceipt`; Llavero está diseñado para consumir ese kernel sin modificarlo. El kernel compartido aporta la mecánica de sellado y verificación de comprobantes que describe el acuerdo. No vuelve reales los datos de ejemplo, no decide si una solicitud es lícita ni demuestra por sí solo que cada comportamiento acordado pase en la versión actual.
+
+**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 Lore Plugin aporta el contexto y el enrutamiento del proyecto: el contrato del proyecto apunta al acuerdo, los principios y el registro de fases. No es el almacén de permisos ni el servicio de acceso a datos. Este repositorio público contiene documentación y evidencia, no el código fuente de esas mecánicas.
 
