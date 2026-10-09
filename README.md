@@ -153,9 +153,6 @@ Start with the agreement's public summary in [How it works](./docs/HOW_IT_WORKS.
 
 <a id="espanol"></a>
 
-<p align="center"><b>Llavero</b> — el permiso para usar tus datos personales se pierde dentro de las organizaciones.<br>
-El permiso se ve antes de que alguien actúe, y el resultado se conserva. Evidencia: 14/14 pruebas. Datos ficticios. Ley 21.719 de Chile.</p>
-
 **Llavero vuelve legible el permiso para quien debe decidir.**
 
 > «La unidad es el permiso: quién lo pide, para qué, bajo qué llave y qué se negó.»
