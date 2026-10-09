@@ -151,8 +151,6 @@ Start with the agreement's public summary in [How it works](./docs/HOW_IT_WORKS.
 <details>
 <summary><b>Leer en español</b></summary>
 
-<p align="center"><b>Postulamos a la hackatón Find Your Way y planeamos participar en Meridian.</b></p>
-
 <a id="espanol"></a>
 
 <p align="center"><b>Llavero</b> — el permiso para usar tus datos personales se pierde dentro de las organizaciones.<br>
