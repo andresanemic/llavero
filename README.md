@@ -11,13 +11,10 @@
   <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_pinned-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 pinned (commit ed559e8)"></a>
 </p>
 
-<p align="center">
-  <b>ES — Persona-1, identidad sintética de ejemplo, no puede ver quién pidió sus datos, para qué, ni qué pasó después. Llavero hace legible cada permiso: quién pidió, con qué propósito, bajo qué clave, y qué se denegó. Evidencia: 14/14 tests pasan (2026-10-09). Límite: proyecto local y ficticio, no un servicio de datos desplegado.</b>
-</p>
-
-<p align="center">
-  <b>EN — Persona-1, a synthetic example identity, cannot see who requested their data, for what, or what happened next. Llavero makes each permission legible: who asked, for what purpose, under which key, and what was refused. Evidence: 14/14 tests pass (2026-10-09). Limit: local, fictional project, not a deployed data service.</b>
-</p>
+<p align="center"><b>Llavero</b> — consent to use your personal data gets lost inside organisations.<br>
+The permission is visible before anyone acts, and the result is kept. Evidence: 14/14 tests. Fictional data. Chile's Law 21.719.<br>
+<b>Llavero</b> — el permiso para usar tus datos personales se pierde dentro de las organizaciones.<br>
+El permiso se ve antes de que alguien actúe, y el resultado se conserva. Evidencia: 14/14 pruebas. Datos ficticios. Ley 21.719 de Chile.</p>
 
 <p align="center">
   <b>A permission should be legible to the person it affects: who asked, for what, and what happened next.</b>
