@@ -12,9 +12,7 @@
 </p>
 
 <p align="center"><b>Llavero</b> — consent to use your personal data gets lost inside organisations.<br>
-The permission is visible before anyone acts, and the result is kept. Evidence: 14/14 tests. Fictional data. Chile's Law 21.719.<br>
-<b>Llavero</b> — el permiso para usar tus datos personales se pierde dentro de las organizaciones.<br>
-El permiso se ve antes de que alguien actúe, y el resultado se conserva. Evidencia: 14/14 pruebas. Datos ficticios. Ley 21.719 de Chile.</p>
+The permission is visible before anyone acts, and the result is kept. Evidence: 14/14 tests. Fictional data. Chile's Law 21.719.</p>
 
 <p align="center">
   <b>A permission should be legible to the person it affects: who asked, for what, and what happened next.</b>
@@ -156,6 +154,9 @@ Start with the agreement's public summary in [How it works](./docs/HOW_IT_WORKS.
 <summary><b>Leer en español</b></summary>
 
 <a id="espanol"></a>
+
+<p align="center"><b>Llavero</b> — el permiso para usar tus datos personales se pierde dentro de las organizaciones.<br>
+El permiso se ve antes de que alguien actúe, y el resultado se conserva. Evidencia: 14/14 pruebas. Datos ficticios. Ley 21.719 de Chile.</p>
 
 **Llavero vuelve legible el permiso para quien debe decidir.**
 
