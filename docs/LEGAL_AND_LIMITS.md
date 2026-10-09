@@ -25,7 +25,7 @@ Any real-world use would need its own legal and operational assessment. The agre
 
 ## Read alongside the evidence
 
-The agreed rules and current test result are different things. The supplied suite reports 8 passes and 6 failures; [Evidence](EVIDENCE.md) lists the failed expectations and explains the kernel digest pin. A passing test does not make the project legally compliant or ready for real-world use.
+The agreed rules and current test result are different things. The supplied suite of 2026-10-09 reports 14 passes and no failures; [Evidence](EVIDENCE.md) lists the tests and explains the earlier red capture and the kernel digest pin. A passing test does not make the project legally compliant or ready for real-world use.
 
 ---
 
@@ -58,4 +58,4 @@ Cualquier uso real requeriría una evaluación jurídica y operativa propia. El 
 
 ## Leer junto con la evidencia
 
-Las reglas acordadas y el resultado actual de las pruebas son cosas distintas. La suite suministrada informa 8 aprobadas y 6 fallidas; [Evidencia](EVIDENCE.md) enumera las expectativas fallidas y explica la fijación por digest del kernel. Una prueba aprobada no vuelve al proyecto legalmente conforme ni listo para uso real.
+Las reglas acordadas y el resultado actual de las pruebas son cosas distintas. La suite suministrada del 2026-10-09 informa 14 aprobadas y ninguna fallida; [Evidencia](EVIDENCE.md) enumera las pruebas y explica la captura roja anterior y la fijación por digest del kernel. Una prueba aprobada no vuelve al proyecto legalmente conforme ni listo para uso real.

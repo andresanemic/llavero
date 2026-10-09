@@ -1,0 +1,25 @@
+Suite capture — llavero — 2026-10-09
+Command: node --test test/*.test.js (clean clone of commit 38ea1b0, empty HOME, no network)
+Node: v24.15.0 · Kernel: Vespi 0.1.5, commit ed559e83c976dd6e6a379a5510db776206f670b4, copied in vendor/vespi-kernel
+Summary: tests 14 pass 14 fail 0 cancelled 0 skipped 0 todo 0 
+
+✔ el núcleo que consume Llavero es el corte fijado, módulo por módulo (72.8125ms)
+✔ el encabezado de los cinco módulos declara el mismo commit (1.3901ms)
+✔ pedir no es tener: sin llave, el acceso se bloquea y vuelve a la persona (12.6486ms)
+✔ la llave vencida no abre y el bloqueo dice cuándo murió (10.541ms)
+✔ la llave no viaja a otro destino y el bloqueo nombra los dos (9.5164ms)
+✔ el alcance es un dato, no «los datos» (9.2823ms)
+✔ el presupuesto es un límite duro y se acumula entre accesos (20.8634ms)
+✔ un acceso con otro propósito no abre: la llave dice para qué (9.6399ms)
+✔ la revocación cierra la puerta desde ese momento y no se reactiva sola (15.591ms)
+✔ un portador no puede pasar más de lo que su llave le da (15.1758ms)
+✔ el mismo acceso no se ejecuta dos veces: el segundo devuelve el recibo del primero (14.0259ms)
+✔ un recibo editado a mano no verifica (11.5853ms)
+✔ un verificador que solo cree al ejecutor no puede producir un verde en la auditoría (16.007ms)
+✔ el registro es un archivo que la persona puede abrir sin Llavero (16.1257ms)
+ℹ tests 14
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
