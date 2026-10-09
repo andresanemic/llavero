@@ -12,6 +12,14 @@
 </p>
 
 <p align="center">
+  <b>ES — Persona-1, identidad sintética de ejemplo, no puede ver quién pidió sus datos, para qué, ni qué pasó después. Llavero hace legible cada permiso: quién pidió, con qué propósito, bajo qué clave, y qué se denegó. Evidencia: 14/14 tests pasan (2026-10-09). Límite: proyecto local y ficticio, no un servicio de datos desplegado.</b>
+</p>
+
+<p align="center">
+  <b>EN — Persona-1, a synthetic example identity, cannot see who requested their data, for what, or what happened next. Llavero makes each permission legible: who asked, for what purpose, under which key, and what was refused. Evidence: 14/14 tests pass (2026-10-09). Limit: local, fictional project, not a deployed data service.</b>
+</p>
+
+<p align="center">
   <b>A permission should be legible to the person it affects: who asked, for what, and what happened next.</b>
 </p>
 
