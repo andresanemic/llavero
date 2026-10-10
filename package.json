@@ -1,0 +1,11 @@
+{
+  "name": "llavero",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proyecto 7 de los diez de Vespi: mis datos, del lado de la persona. Consume el kernel de Vespi; no lo modifica.",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "recorrido": "node src/recorrido.js",
+    "cli": "node src/cli.js"
+  }
+}

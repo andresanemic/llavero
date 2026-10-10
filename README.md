@@ -17,7 +17,7 @@
 The permission is visible before anyone acts, and the result is kept. Evidence: 14/14 tests. Fictional data. Chile's Law 21.719.</p>
 
 <p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
-<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
+<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./LICENSE">Review-only license</a>.<br>The source is in this repository: run <code>npm test</code> on Node 24.</p>
 
 ---
 
@@ -120,7 +120,7 @@ The project agreement names Vespi's canonical receipt digest and `verifyReceipt`
 
 **What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
 
-Lore Plugin is the surrounding project-context and routing system: the project contract points to the agreement, principles, and phase record. It is not the permission store or the data-access service. This public repository contains documentation and evidence, not source code for those mechanics.
+Lore Plugin is the surrounding project-context and routing system: the project contract points to the agreement, principles, and phase record. It is not the permission store or the data-access service. This public repository contains documentation, evidence and the source code for those mechanics, under the review-only license.
 
 ## What it does not do, and what is not verified
 
@@ -130,7 +130,7 @@ The supplied run is green for the 14 expectations it names, and for nothing more
 
 ## How to review this project
 
-Start with the agreement's public summary in [How it works](./docs/HOW_IT_WORKS.md), compare the declared rules with [Evidence](./docs/EVIDENCE.md), then read [Legal and limits](./docs/LEGAL_AND_LIMITS.md). [Code not included](./CODE_NOT_INCLUDED.md) explains the publication boundary; the [LICENSE](./LICENSE) contains the review terms. Do not treat the fictional interaction above as a runnable CLI transcript.
+Start with the agreement's public summary in [How it works](./docs/HOW_IT_WORKS.md), compare the declared rules with [Evidence](./docs/EVIDENCE.md), then read [Legal and limits](./docs/LEGAL_AND_LIMITS.md). The source is in this repository; the [LICENSE](./LICENSE) contains the review terms. Do not treat the fictional interaction above as a runnable CLI transcript.
 
 ## Author
 
@@ -140,7 +140,7 @@ Start with the agreement's public summary in [How it works](./docs/HOW_IT_WORKS.
 
 ---
 
-[How it works](./docs/HOW_IT_WORKS.md) · [Evidence](./docs/EVIDENCE.md) · [Legal and limits](./docs/LEGAL_AND_LIMITS.md) · [Code not included](./CODE_NOT_INCLUDED.md) · [Review-only license](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+[How it works](./docs/HOW_IT_WORKS.md) · [Evidence](./docs/EVIDENCE.md) · [Legal and limits](./docs/LEGAL_AND_LIMITS.md) · [Review-only license](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
 
 </details>
 
@@ -164,7 +164,7 @@ Llavero explora una respuesta acotada. Cada solicitud declara un propósito, un 
 - Lee la base del proyecto y su recorrido. Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md).
 - Abre el registro de pruebas. Consulta [Evidencia](./docs/EVIDENCE.md).
 - Lee los límites jurídicos y de verificación. Consulta [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
-- Revisa las condiciones de publicación. Consulta [Código no incluido](./CODE_NOT_INCLUDED.md) y la [licencia de solo revisión](./LICENSE).
+- Lee los términos en la [licencia de solo revisión](./LICENSE) y ejecuta `npm test` (Node 24).
 
 ## En un minuto
 
@@ -250,7 +250,7 @@ El acuerdo del proyecto nombra el digest canónico de comprobantes de Vespi y `v
 
 **Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
-Lore Plugin aporta el contexto y el enrutamiento del proyecto: el contrato del proyecto apunta al acuerdo, los principios y el registro de fases. No es el almacén de permisos ni el servicio de acceso a datos. Este repositorio público contiene documentación y evidencia, no el código fuente de esas mecánicas.
+Lore Plugin aporta el contexto y el enrutamiento del proyecto: el contrato del proyecto apunta al acuerdo, los principios y el registro de fases. No es el almacén de permisos ni el servicio de acceso a datos. Este repositorio público contiene documentación, evidencia y el código fuente de esas mecánicas, bajo la licencia de solo revisión.
 
 ## Lo que no hace y lo que no está verificado
 
@@ -260,7 +260,7 @@ La corrida suministrada está en verde para las 14 expectativas que nombra, y pa
 
 ## Cómo revisar este proyecto
 
-Empieza por el resumen público del acuerdo en [Cómo funciona](./docs/HOW_IT_WORKS.md), compara las reglas declaradas con [Evidencia](./docs/EVIDENCE.md) y lee [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md). [Código no incluido](./CODE_NOT_INCLUDED.md) explica la frontera de publicación; la [LICENSE](./LICENSE) contiene las condiciones de revisión. No tomes el intercambio ficticio anterior como una transcripción ejecutable de la CLI.
+Empieza por el resumen público del acuerdo en [Cómo funciona](./docs/HOW_IT_WORKS.md), compara las reglas declaradas con [Evidencia](./docs/EVIDENCE.md) y lee [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md). El código está en este repositorio; la [LICENSE](./LICENSE) contiene las condiciones de revisión. No tomes el intercambio ficticio anterior como una transcripción ejecutable de la CLI.
 
 ## Autor
 
@@ -270,6 +270,6 @@ Empieza por el resumen público del acuerdo en [Cómo funciona](./docs/HOW_IT_WO
 
 ---
 
-[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) · [Código no incluido](./CODE_NOT_INCLUDED.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
 
 </details>

@@ -37,7 +37,7 @@ The phase record says the nine initial red cases were observed and saved in priv
 
 ## What reviewers can inspect
 
-This public repository contains agreement-derived documentation and the 2026-10-09 capture (`docs/suite-2026-10-09.txt`); it does not include the source code or a full transcript of the historical terminal walkthrough. The package identifies npm test as its test command; when the source is available, running it should report the same counts as the reference capture — 14 tests, 14 pass, 0 cancelled, 0 skipped, 0 todo — against the kernel files present then. Those counts attest only to what these tests cover, not to a real institutional deployment or an audit.
+This public repository contains agreement-derived documentation, the source code under the review-only license (reading and cloning for evaluation; no modification or redistribution) and the 2026-10-09 capture (`docs/suite-2026-10-09.txt`); it does not include a full transcript of the historical terminal walkthrough. Run `npm test` on Node 24 from the project root; it should report the same counts as the reference capture — 14 tests, 14 pass, 0 cancelled, 0 skipped, 0 todo — against the kernel files present then. Those counts attest only to what these tests cover, not to a real institutional deployment or an audit.
 
 There is no testnet transaction, public chain anchor, institutional integration, network access, or external data access in the evidence. The agreement specifies a local, reversible effect using synthetic example data only.
 
@@ -84,6 +84,6 @@ El registro de fases dice que los nueve casos rojos iniciales se observaron y gu
 
 ## Qué pueden inspeccionar quienes revisan
 
-Este repositorio público contiene documentación derivada del acuerdo y la captura del 2026-10-09 (`docs/suite-2026-10-09.txt`); no incluye el código fuente ni la transcripción completa del recorrido histórico en terminal. El paquete indica npm test como comando de pruebas; al estar disponible el código, ejecutarlo debe dar el mismo conteo que la captura de referencia — 14 pruebas, 14 pasan, 0 canceladas, 0 omitidas, 0 todo — contra los archivos del kernel presentes en ese momento. Esos números acreditan solo lo que esas pruebas cubren, no un despliegue institucional ni una auditoría.
+Este repositorio público contiene documentación derivada del acuerdo, el código fuente bajo la licencia de solo revisión (permite leer y clonar para evaluar, no modificar ni redistribuir) y la captura del 2026-10-09 (`docs/suite-2026-10-09.txt`); no incluye la transcripción completa del recorrido histórico en terminal. Ejecuta `npm test` con Node 24 desde la raíz del proyecto; debe dar el mismo conteo que la captura de referencia — 14 pruebas, 14 pasan, 0 canceladas, 0 omitidas, 0 todo — contra los archivos del kernel presentes en ese momento. Esos números acreditan solo lo que esas pruebas cubren, no un despliegue institucional ni una auditoría.
 
 La evidencia no incluye transacciones de testnet, anclajes públicos a una cadena, integración institucional, acceso a la red ni acceso externo a datos. El acuerdo especifica un efecto local y reversible con datos sintéticos de ejemplo.
