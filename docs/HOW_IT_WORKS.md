@@ -23,7 +23,7 @@ This is a narrative of the agreed route, not a captured terminal run. The agreem
 
 A fictional organization requests one field in persona-1’s synthetic example data and declares a purpose, destination, and expiry. The person sees these details before granting a key or declining. If a holder presents the key for that same field, purpose, and destination before expiry, the agreed flow checks that the key exists and has not been revoked or expired before reading from the local example store. The access is simulated and is meant to be labelled that way. A receipt records the event; the person can read the JSONL record with an ordinary editor, and a separate verifier recalculates what the record supports.
 
-A different purpose is blocked in a passing test, as is access without a key. Permanent revocation, repeated-access idempotency, independent verification, and an access entry in the readable record are agreed expectations with tests; in the 2026-10-09 run all of them pass. This route explains the design; a passing suite covers only what those tests check.
+A different purpose is blocked in a passing test, as is access without a key. Permanent revocation, repeated-access idempotency, independent verification, and an access entry in the readable record are agreed expectations with tests; in the 2026-10-11 run all of them pass. This route explains the design; a passing suite covers only what those tests check.
 
 ## Flow
 
@@ -66,7 +66,7 @@ The agreement says a receipt carries the requester, purpose, key, opened item, v
 | The person’s record is readable | The access appears in a file readable outside Llavero | Pass |
 | Receipt integrity is checked | A hand-edited receipt does not verify | Pass |
 
-The supplied run of 2026-10-09 reports 14 tests: 14 pass, none fail, none skipped (`docs/suite-2026-10-09.txt`). These results describe tests, not a real deployment.
+The supplied run of 2026-10-11 reports 14 tests: 14 pass, none fail, none skipped (`docs/suite-2026-10-11.txt`). These results describe tests, not a real deployment.
 
 ## What it shows, and what it does not
 
@@ -101,7 +101,7 @@ Este relato describe el recorrido acordado, no una corrida de terminal capturada
 
 Una organización ficticia pide un campo de los datos sintéticos de ejemplo de persona-1 y declara un propósito, un destino y un vencimiento. La persona ve esos detalles antes de conceder una llave o rechazar. Si un portador presenta la llave para ese mismo campo, propósito y destino antes del vencimiento, el recorrido acordado comprueba que la llave exista y no se haya revocado ni vencido antes de consultar el almacén local de ejemplos. El acceso es simulado y debe identificarse como tal. Un comprobante registra el evento; la persona puede leer el JSONL con un editor común y un verificador separado recalcula lo que respalda el registro.
 
-Una prueba aprobada bloquea un propósito distinto, y otra bloquea el acceso sin llave. Las expectativas de revocación permanente, idempotencia de un acceso repetido, verificación independiente y entrada de acceso en el registro legible tienen pruebas, y en la corrida del 2026-10-09 todas pasan. El recorrido explica el diseño, pero no afirma que esté todo verificado.
+Una prueba aprobada bloquea un propósito distinto, y otra bloquea el acceso sin llave. Las expectativas de revocación permanente, idempotencia de un acceso repetido, verificación independiente y entrada de acceso en el registro legible tienen pruebas, y en la corrida del 2026-10-11 todas pasan. El recorrido explica el diseño, pero no afirma que esté todo verificado.
 
 ## Recorrido
 
@@ -144,7 +144,7 @@ El acuerdo dice que el comprobante incluye al solicitante, propósito, llave, da
 | El registro de la persona es legible | El acceso aparece en un archivo que se abre fuera de Llavero | Pasa |
 | Se comprueba la integridad | Un comprobante editado a mano no verifica | Pasa |
 
-La corrida suministrada del 2026-10-09 informa 14 pruebas: 14 pasan, ninguna falla ni se omite (`docs/suite-2026-10-09.txt`). Estos resultados describen pruebas, no un despliegue real.
+La corrida suministrada del 2026-10-11 informa 14 pruebas: 14 pasan, ninguna falla ni se omite (`docs/suite-2026-10-11.txt`). Estos resultados describen pruebas, no un despliegue real.
 
 ## Qué muestra y qué no
 

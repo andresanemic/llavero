@@ -41,7 +41,7 @@ Llavero explores a bounded answer. Each request names a purpose, a specific scop
 
 Imagine a fictional requester asking persona-1, a synthetic example identity, for one specific data item. The person can review the requester, declared purpose, destination, scope, and expiry before granting a key or declining. If a holder later presents the key with matching details, the agreed flow permits access to the project's local example store and records a receipt. A request with a different purpose is blocked; revocation is meant to block later attempts. The person can inspect the JSONL record with an ordinary editor.
 
-That is the agreed path, and the supplied suite of 2026-10-09 backs it: 14 tests, 14 pass, 0 cancelled, 0 skipped, 0 todo, on Node v24.15.0. The record does not contain a captured transcript of the full walkthrough. [Evidence](./docs/EVIDENCE.md) separates the historical walkthrough from the current test result.
+That is the agreed path, and the supplied suite of 2026-10-11 backs it: 14 tests, 14 pass, 0 cancelled, 0 skipped, 0 todo, on Node v24.15.0. The record does not contain a captured transcript of the full walkthrough. [Evidence](./docs/EVIDENCE.md) separates the historical walkthrough from the current test result.
 
 ## What it looks like in practice
 
@@ -61,7 +61,7 @@ Record:              Keep a local receipt that can be inspected separately.
 Verifier:             Recompute the result from the record.
 ```
 
-The suite includes a mismatched-purpose block and a keyless-access block, and it also covers permanent revocation, same-access idempotency, independent rejection of an executor-only green result, and an access entry in the person's readable record: the 2026-10-09 capture shows all 14 passing. This example explains the intended decision sequence; it does not supply missing output. [How it works](./docs/HOW_IT_WORKS.md) gives the fuller walkthrough and its limits.
+The suite includes a mismatched-purpose block and a keyless-access block, and it also covers permanent revocation, same-access idempotency, independent rejection of an executor-only green result, and an access entry in the person's readable record: the 2026-10-11 capture shows all 14 passing. This example explains the intended decision sequence; it does not supply missing output. [How it works](./docs/HOW_IT_WORKS.md) gives the fuller walkthrough and its limits.
 
 ## How it works
 
@@ -101,9 +101,9 @@ The diagram describes the agreed flow. The table describes authority and boundar
 | You need | What it gives you | Where it lives |
 |---|---|---|
 | To see what is being requested | A request framed by purpose, one data scope, destination, and expiry | Agreement and [How it works](./docs/HOW_IT_WORKS.md) |
-| To decide who may act | A key granted or revoked by the person | Agreement; the revocation expectation passes in the 2026-10-09 run |
+| To decide who may act | A key granted or revoked by the person | Agreement; the revocation expectation passes in the 2026-10-11 run |
 | To inspect what happened | A local JSONL record and receipts are part of the agreed design | [Evidence](./docs/EVIDENCE.md) lists the access-entry expectation as passing |
-| To distinguish a claim from a check | A verifier that recalculates from the record | Agreement and the named verifier test; that test passes in the 2026-10-09 run |
+| To distinguish a claim from a check | A verifier that recalculates from the record | Agreement and the named verifier test; that test passes in the 2026-10-11 run |
 
 ## What Llavero is not
 
@@ -111,7 +111,7 @@ It is not a real data custodian, an institutional integration, a consent dashboa
 
 ## Evidence you can open
 
-The 2026-10-09 run reports **14 tests: 14 pass, 0 cancelled, 0 skipped, 0 todo**, run with `node --test` on Node v24.15.0 in a clean clone of the private project, with an empty HOME and no network. Every expectation passes: the eight that were already green (keyless access, expiry, destination matching, narrow scope, purpose matching, delegation that cannot widen scope, a receipt changed by hand, and matching module commit headers) and the six that were red on 2026-10-03 (the kernel digest pinned module by module, cumulative budget, permanent revocation, repeating the same access, independent verification, and the person's readable access record).
+The 2026-10-11 run reports **14 tests: 14 pass, 0 cancelled, 0 skipped, 0 todo**, run with `node --test` on Node v24.15.0 in a clean clone of the private project, with an empty HOME and no network. Every expectation passes: the eight that were already green (keyless access, expiry, destination matching, narrow scope, purpose matching, delegation that cannot widen scope, a receipt changed by hand, and matching module commit headers) and the six that were red on 2026-10-03 (the kernel digest pinned module by module, cumulative budget, permanent revocation, repeating the same access, independent verification, and the person's readable access record).
 
 The digest check matters because the project pins the Vespi kernel by digest: the suite verifies the vendored copy (kernel 0.1.6, commit 95f2d61, in vendor/vespi-kernel) against its SOURCE.md module by module, so a changed kernel is not silently treated as the reviewed one. The 2026-10-03 capture was red because the project was still pinned to an older cut of the kernel (0.1.3); the re-pin is done. The adversarial phase records nine red cases written and observed before implementation; the public repository does not include the original nine logs. See [Evidence](./docs/EVIDENCE.md) for names, scope, and chronology.
 
@@ -173,7 +173,7 @@ Llavero explora una respuesta acotada. Cada solicitud declara un propósito, un 
 
 Imagina que un solicitante ficticio pide a persona-1, una identidad sintética de ejemplo, un dato específico. Antes de conceder una llave o rechazar la petición, la persona puede revisar quién solicita, el propósito declarado, el destino, el alcance y el vencimiento. Si después un portador presenta la llave con esos mismos datos, el recorrido acordado permite consultar el almacén local de ejemplos y dejar un comprobante. Una petición con otro propósito se bloquea; la revocación debe bloquear los intentos posteriores. La persona puede inspeccionar el registro JSONL con un editor común.
 
-Ese es el recorrido acordado, y la suite suministrada del 2026-10-09 lo respalda: 14 pruebas, las 14 pasan, 0 canceladas, 0 omitidas, 0 todo, sobre Node v24.15.0. Las fuentes no conservan una transcripción de terminal del recorrido completo. [Evidencia](./docs/EVIDENCE.md) distingue el recorrido histórico del resultado actual.
+Ese es el recorrido acordado, y la suite suministrada del 2026-10-11 lo respalda: 14 pruebas, las 14 pasan, 0 canceladas, 0 omitidas, 0 todo, sobre Node v24.15.0. Las fuentes no conservan una transcripción de terminal del recorrido completo. [Evidencia](./docs/EVIDENCE.md) distingue el recorrido histórico del resultado actual.
 
 ## Cómo se ve en la práctica
 
@@ -193,7 +193,7 @@ Registro:             Dejar un comprobante local que se pueda inspeccionar.
 Verificador:          Recalcular el resultado desde el registro.
 ```
 
-La suite incluye el bloqueo de una petición sin llave y de otra con propósito distinto, y también cubre la revocación permanente, la idempotencia del mismo acceso, el rechazo de un resultado verde que solo confía en el ejecutor y una entrada de acceso en el registro legible por la persona: la captura del 2026-10-09 muestra las 14 en verde. El ejemplo explica la secuencia de decisión prevista; no sustituye una salida que no está disponible. [Cómo funciona](./docs/HOW_IT_WORKS.md) desarrolla el recorrido y sus límites.
+La suite incluye el bloqueo de una petición sin llave y de otra con propósito distinto, y también cubre la revocación permanente, la idempotencia del mismo acceso, el rechazo de un resultado verde que solo confía en el ejecutor y una entrada de acceso en el registro legible por la persona: la captura del 2026-10-11 muestra las 14 en verde. El ejemplo explica la secuencia de decisión prevista; no sustituye una salida que no está disponible. [Cómo funciona](./docs/HOW_IT_WORKS.md) desarrolla el recorrido y sus límites.
 
 ## Cómo funciona
 
@@ -233,9 +233,9 @@ El diagrama representa el recorrido acordado. La tabla describe autoridad y lím
 | Necesitas | Qué te da | Dónde está |
 |---|---|---|
 | Ver qué se solicita | Una solicitud con propósito, un dato concreto, destino y vencimiento | Acuerdo y [Cómo funciona](./docs/HOW_IT_WORKS.md) |
-| Decidir quién puede actuar | Una llave que la persona concede o revoca | Acuerdo; la expectativa de revocación pasa en la corrida del 2026-10-09 |
+| Decidir quién puede actuar | Una llave que la persona concede o revoca | Acuerdo; la expectativa de revocación pasa en la corrida del 2026-10-11 |
 | Inspeccionar qué pasó | Un registro JSONL local y comprobantes forman parte del diseño acordado | [Evidencia](./docs/EVIDENCE.md) indica que la expectativa de registrar el acceso pasa |
-| Distinguir una afirmación de una comprobación | Un verificador que recalcula desde el registro | Acuerdo y prueba del verificador; pasa en la corrida del 2026-10-09 |
+| Distinguir una afirmación de una comprobación | Un verificador que recalcula desde el registro | Acuerdo y prueba del verificador; pasa en la corrida del 2026-10-11 |
 
 ## Qué no es Llavero
 
@@ -243,7 +243,7 @@ No es un custodio real de datos, una integración institucional, un panel de con
 
 ## Evidencia que puedes abrir
 
-La corrida del 2026-10-09 informa **14 pruebas: las 14 pasan, 0 canceladas, 0 omitidas, 0 todo**, corridas con `node --test` sobre Node v24.15.0 en un clon limpio del proyecto privado, con HOME vacío y sin red. Todas las expectativas pasan: las ocho que ya estaban en verde (acceso sin llave, vencimiento, coincidencia del destino, alcance acotado, coincidencia del propósito, delegación que no amplía el alcance, un comprobante editado a mano y encabezados de módulos con el mismo commit) y las seis que el 2026-10-03 estaban en rojo (el digest del kernel fijado módulo por módulo, presupuesto acumulativo, revocación permanente, repetición del mismo acceso, verificación separada y registro legible del acceso para la persona).
+La corrida del 2026-10-11 informa **14 pruebas: las 14 pasan, 0 canceladas, 0 omitidas, 0 todo**, corridas con `node --test` sobre Node v24.15.0 en un clon limpio del proyecto privado, con HOME vacío y sin red. Todas las expectativas pasan: las ocho que ya estaban en verde (acceso sin llave, vencimiento, coincidencia del destino, alcance acotado, coincidencia del propósito, delegación que no amplía el alcance, un comprobante editado a mano y encabezados de módulos con el mismo commit) y las seis que el 2026-10-03 estaban en rojo (el digest del kernel fijado módulo por módulo, presupuesto acumulativo, revocación permanente, repetición del mismo acceso, verificación separada y registro legible del acceso para la persona).
 
 La comprobación del digest importa porque el proyecto fija el kernel de Vespi por digest: la suite verifica la copia vendida (kernel 0.1.6, commit 95f2d61, en vendor/vespi-kernel) contra su SOURCE.md módulo por módulo, así que un cambio del kernel no se toma en silencio como si fuera el mismo kernel revisado. La captura del 2026-10-03 estaba en rojo porque el proyecto aún fijaba un corte viejo del kernel (0.1.3); el re-pin ya está hecho. La fase adversarial registra nueve casos rojos escritos y observados antes de implementar; el repositorio público no incluye los registros originales de esos nueve casos. [Evidencia](./docs/EVIDENCE.md) da los nombres, el alcance y la cronología.
 
