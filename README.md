@@ -125,6 +125,9 @@ Lore Plugin is the surrounding project-context and routing system: the project c
 
 ## What it does not do, and what is not verified
 
+Review status: this project has not been audited. The Vespi kernel it runs on has had superreviews with Claude Code and no independent external security audit.
+
+
 Llavero does not establish legal compliance, identity, real consent, a requester's real-world right to data, the truth of a request, or readiness for production. The agreement cites Chile's Law 21.719 as design context, marks it `NO VERIFICADO`, and says the primary law and implementation were not checked during this phase. No legal professional reviewed the project's legal position.
 
 The supplied run is green for the 14 expectations it names, and for nothing more: it does not audit the project, does not make the example data real, and does not cover the historical walkthrough. The complete historical walkthrough is described in the agreement and phase record, but its original terminal transcript is not available in the public source material.
@@ -256,6 +259,9 @@ El acuerdo del proyecto nombra el digest canónico de comprobantes de Vespi y `v
 Lore Plugin aporta el contexto y el enrutamiento del proyecto: el contrato del proyecto apunta al acuerdo, los principios y el registro de fases. No es el almacén de permisos ni el servicio de acceso a datos. Este repositorio público contiene documentación, evidencia y el código fuente de esas mecánicas, bajo la licencia de solo revisión.
 
 ## Lo que no hace y lo que no está verificado
+
+Estado de revisión: este proyecto no ha sido auditado. El kernel de Vespi sobre el que corre ha tenido superreviews con Claude Code y ninguna auditoría de seguridad externa independiente.
+
 
 Llavero no establece cumplimiento legal, identidad, consentimiento real, derecho de un solicitante real a los datos, veracidad de una solicitud ni preparación para producción. El acuerdo cita la Ley 21.719 de Chile como contexto de diseño, la marca `NO VERIFICADO` y dice que durante esta fase no se leyeron la ley primaria ni se contrastó con ella la implementación. Ningún profesional del derecho revisó la posición jurídica del proyecto.
 
