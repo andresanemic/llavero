@@ -7,11 +7,12 @@
 <p align="center">
   <a href="#english"><img src="https://img.shields.io/badge/status-working_path-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: working path"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="License: review only"></a>
-  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-14_of_14_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 14 of 14 tests pass"></a>
+  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-14_of_14_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 14 of 14 tests pass"></a> <b>It worked.</b>
   <a href="#english"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
-  <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/95f2d614f4492056c8bb2cd951f08d1089027d4f"><img src="https://img.shields.io/badge/kernel-0.1.6_pin-95f2d61?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.6 source pin (commit 95f2d61)"></a>
 </p>
+
 
 <p align="center"><b>Llavero</b> — consent to use your personal data gets lost inside organisations.<br>
 The permission is visible before anyone acts, and the result is kept. Evidence: 14/14 tests. Fictional data. Chile's Law 21.719.</p>
@@ -112,13 +113,13 @@ It is not a real data custodian, an institutional integration, a consent dashboa
 
 The 2026-10-09 run reports **14 tests: 14 pass, 0 cancelled, 0 skipped, 0 todo**, run with `node --test` on Node v24.15.0 in a clean clone of the private project, with an empty HOME and no network. Every expectation passes: the eight that were already green (keyless access, expiry, destination matching, narrow scope, purpose matching, delegation that cannot widen scope, a receipt changed by hand, and matching module commit headers) and the six that were red on 2026-10-03 (the kernel digest pinned module by module, cumulative budget, permanent revocation, repeating the same access, independent verification, and the person's readable access record).
 
-The digest check matters because the project pins the Vespi kernel by digest: the suite verifies the vendored copy (kernel 0.1.5, commit ed559e8, in vendor/vespi-kernel) against its SOURCE.md module by module, so a changed kernel is not silently treated as the reviewed one. The 2026-10-03 capture was red because the project was still pinned to an older cut of the kernel (0.1.3); the re-pin is done. The adversarial phase records nine red cases written and observed before implementation; the public repository does not include the original nine logs. See [Evidence](./docs/EVIDENCE.md) for names, scope, and chronology.
+The digest check matters because the project pins the Vespi kernel by digest: the suite verifies the vendored copy (kernel 0.1.6, commit 95f2d61, in vendor/vespi-kernel) against its SOURCE.md module by module, so a changed kernel is not silently treated as the reviewed one. The 2026-10-03 capture was red because the project was still pinned to an older cut of the kernel (0.1.3); the re-pin is done. The adversarial phase records nine red cases written and observed before implementation; the public repository does not include the original nine logs. See [Evidence](./docs/EVIDENCE.md) for names, scope, and chronology.
 
 ## Llavero, Vespi, and Lore Plugin
 
 The project agreement names Vespi's canonical receipt digest and `verifyReceipt`; Llavero is designed to consume that kernel without modifying it. The shared kernel supplies receipt sealing and verification mechanics described by the agreement. It does not make the sample data real, decide whether a request is lawful, or independently prove that every agreed behavior passes in the current checkout.
 
-**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
+**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.6, in the pinned copy prepared for Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
 
 Lore Plugin is the surrounding project-context and routing system: the project contract points to the agreement, principles, and phase record. It is not the permission store or the data-access service. This public repository contains documentation, evidence and the source code for those mechanics, under the review-only license.
 
@@ -148,6 +149,8 @@ Start with the agreement's public summary in [How it works](./docs/HOW_IT_WORKS.
 <summary><b>Leer en español</b></summary>
 
 <a id="espanol"></a>
+
+<p align="center"><b>Funcionó.</b></p>
 
 **Llavero vuelve legible el permiso para quien debe decidir.**
 
@@ -242,13 +245,13 @@ No es un custodio real de datos, una integración institucional, un panel de con
 
 La corrida del 2026-10-09 informa **14 pruebas: las 14 pasan, 0 canceladas, 0 omitidas, 0 todo**, corridas con `node --test` sobre Node v24.15.0 en un clon limpio del proyecto privado, con HOME vacío y sin red. Todas las expectativas pasan: las ocho que ya estaban en verde (acceso sin llave, vencimiento, coincidencia del destino, alcance acotado, coincidencia del propósito, delegación que no amplía el alcance, un comprobante editado a mano y encabezados de módulos con el mismo commit) y las seis que el 2026-10-03 estaban en rojo (el digest del kernel fijado módulo por módulo, presupuesto acumulativo, revocación permanente, repetición del mismo acceso, verificación separada y registro legible del acceso para la persona).
 
-La comprobación del digest importa porque el proyecto fija el kernel de Vespi por digest: la suite verifica la copia vendida (kernel 0.1.5, commit ed559e8, en vendor/vespi-kernel) contra su SOURCE.md módulo por módulo, así que un cambio del kernel no se toma en silencio como si fuera el mismo kernel revisado. La captura del 2026-10-03 estaba en rojo porque el proyecto aún fijaba un corte viejo del kernel (0.1.3); el re-pin ya está hecho. La fase adversarial registra nueve casos rojos escritos y observados antes de implementar; el repositorio público no incluye los registros originales de esos nueve casos. [Evidencia](./docs/EVIDENCE.md) da los nombres, el alcance y la cronología.
+La comprobación del digest importa porque el proyecto fija el kernel de Vespi por digest: la suite verifica la copia vendida (kernel 0.1.6, commit 95f2d61, en vendor/vespi-kernel) contra su SOURCE.md módulo por módulo, así que un cambio del kernel no se toma en silencio como si fuera el mismo kernel revisado. La captura del 2026-10-03 estaba en rojo porque el proyecto aún fijaba un corte viejo del kernel (0.1.3); el re-pin ya está hecho. La fase adversarial registra nueve casos rojos escritos y observados antes de implementar; el repositorio público no incluye los registros originales de esos nueve casos. [Evidencia](./docs/EVIDENCE.md) da los nombres, el alcance y la cronología.
 
 ## Llavero, Vespi y Lore Plugin
 
 El acuerdo del proyecto nombra el digest canónico de comprobantes de Vespi y `verifyReceipt`; Llavero está diseñado para consumir ese kernel sin modificarlo. El kernel compartido aporta la mecánica de sellado y verificación de comprobantes que describe el acuerdo. No vuelve reales los datos de ejemplo, no decide si una solicitud es lícita ni demuestra por sí solo que cada comportamiento acordado pase en la versión actual.
 
-**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
+**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.6, en la copia fijada para Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 Lore Plugin aporta el contexto y el enrutamiento del proyecto: el contrato del proyecto apunta al acuerdo, los principios y el registro de fases. No es el almacén de permisos ni el servicio de acceso a datos. Este repositorio público contiene documentación, evidencia y el código fuente de esas mecánicas, bajo la licencia de solo revisión.
 
