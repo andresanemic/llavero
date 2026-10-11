@@ -18,7 +18,7 @@
 <p align="center"><b>Llavero</b> — consent to use your personal data gets lost inside organisations.<br>
 The permission is visible before anyone acts, and the result is kept. Evidence: 14/14 tests. Fictional data. Chile's Law 21.719.</p>
 
-<p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
+<p align="center"><b>We submitted Vespi to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
 <p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./LICENSE">Review-only license</a>.<br>The source is in this repository: run <code>npm test</code> on Node 24.</p>
 
 ---
