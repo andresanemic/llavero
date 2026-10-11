@@ -27,7 +27,7 @@ The names and statuses come from the 2026-10-11 capture (`docs/suite-2026-10-11.
 
 ## Why the earlier capture was red
 
-Llavero consumes the shared Vespi kernel and fixes the expected files by digest. A digest fingerprints file contents: when a pinned module changes, the comparison reports a mismatch instead of treating the new contents as the reviewed cut. The 2026-10-11 capture shows the vendored copy (kernel 0.1.6, commit 95f2d61, in vendor/vespi-kernel) matching its SOURCE.md module by module, and the suite verifies that copy. The earlier capture, dated 2026-10-03, was red because the project was still pinned to an older cut of the kernel (0.1.3); the re-pin is done. A phase record places an earlier implementation and a complete walkthrough against that older cut; the public sources keep no original terminal transcript.
+Llavero consumes the shared Vespi kernel and fixes the expected files by digest. A digest fingerprints file contents: when a pinned module changes, the comparison reports a mismatch instead of treating the new contents as the reviewed cut. The 2026-10-11 capture shows the vendored copy (kernel 0.1.6, commit 7767daa, in vendor/vespi-kernel) matching its SOURCE.md module by module, and the suite verifies that copy. The earlier capture, dated 2026-10-03, was red because the project was still pinned to an older cut of the kernel (0.1.3); the re-pin is done. A phase record places an earlier implementation and a complete walkthrough against that older cut; the public sources keep no original terminal transcript.
 
 ## What the adversarial phase found
 
@@ -74,7 +74,7 @@ Los nombres y estados vienen de la captura del 2026-10-11 (`docs/suite-2026-10-1
 
 ## Por qué la captura anterior estaba en rojo
 
-Llavero consume el kernel compartido de Vespi y fija por digest los archivos esperados. El digest es una huella del contenido: si cambia un módulo fijado, la comparación informa una diferencia en vez de tratar en silencio el contenido nuevo como el corte ya revisado. La captura del 2026-10-11 muestra que la copia vendida (kernel 0.1.6, commit 95f2d61, en vendor/vespi-kernel) coincide con su SOURCE.md módulo por módulo, y la suite verifica esa copia. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto aún fijaba un corte viejo del kernel (0.1.3); el re-pin ya está hecho. El registro de fases sitúa una implementación y un recorrido completo anteriores contra ese corte viejo; las fuentes públicas no conservan la transcripción original de terminal.
+Llavero consume el kernel compartido de Vespi y fija por digest los archivos esperados. El digest es una huella del contenido: si cambia un módulo fijado, la comparación informa una diferencia en vez de tratar en silencio el contenido nuevo como el corte ya revisado. La captura del 2026-10-11 muestra que la copia vendida (kernel 0.1.6, commit 7767daa, en vendor/vespi-kernel) coincide con su SOURCE.md módulo por módulo, y la suite verifica esa copia. La captura anterior, del 2026-10-03, estaba en rojo porque el proyecto aún fijaba un corte viejo del kernel (0.1.3); el re-pin ya está hecho. El registro de fases sitúa una implementación y un recorrido completo anteriores contra ese corte viejo; las fuentes públicas no conservan la transcripción original de terminal.
 
 ## Qué encontró la fase adversarial
 
