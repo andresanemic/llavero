@@ -42,7 +42,7 @@ Llavero explores a bounded answer. Each request names a purpose, a specific scop
 
 Imagine a fictional requester asking persona-1, a synthetic example identity, for one specific data item. The person can review the requester, declared purpose, destination, scope, and expiry before granting a key or declining. If a holder later presents the key with matching details, the agreed flow permits access to the project's local example store and records a receipt. A request with a different purpose is blocked; revocation is meant to block later attempts. The person can inspect the JSONL record with an ordinary editor.
 
-That is the agreed path, and the supplied suite of 2026-10-11 backs it: 14 tests, 14 pass, 0 cancelled, 0 skipped, 0 todo, on Node v24.15.0. The record does not contain a captured transcript of the full walkthrough. [Evidence](./docs/EVIDENCE.md) separates the historical walkthrough from the current test result.
+That is the agreed path, and the recorded suite of 2026-10-11 backs it: 14 tests, 14 pass, 0 cancelled, 0 skipped, 0 todo, on Node v24.15.0. The record does not contain a captured transcript of the full walkthrough. [Evidence](./docs/EVIDENCE.md) separates the historical walkthrough from the current test result.
 
 ## What it looks like in practice
 
@@ -131,7 +131,7 @@ Review status: this project has not been audited. The Vespi kernel it runs on ha
 
 Llavero does not establish legal compliance, identity, real consent, a requester's real-world right to data, the truth of a request, or readiness for production. The agreement cites Chile's Law 21.719 as design context, marks it `NO VERIFICADO`, and says the primary law and implementation were not checked during this phase. No legal professional reviewed the project's legal position.
 
-The supplied run is green for the 14 expectations it names, and for nothing more: it does not audit the project, does not make the example data real, and does not cover the historical walkthrough. The complete historical walkthrough is described in the agreement and phase record, but its original terminal transcript is not available in the public source material.
+The recorded run is green for the 14 expectations it names, and for nothing more: it does not audit the project, does not make the example data real, and does not cover the historical walkthrough. The complete historical walkthrough is described in the agreement and phase record, but its original terminal transcript is not available in the public source material.
 
 ## How to review this project
 
@@ -177,7 +177,7 @@ Llavero explora una respuesta acotada. Cada solicitud declara un propósito, un 
 
 Imagina que un solicitante ficticio pide a persona-1, una identidad sintética de ejemplo, un dato específico. Antes de conceder una llave o rechazar la petición, la persona puede revisar quién solicita, el propósito declarado, el destino, el alcance y el vencimiento. Si después un portador presenta la llave con esos mismos datos, el recorrido acordado permite consultar el almacén local de ejemplos y dejar un comprobante. Una petición con otro propósito se bloquea; la revocación debe bloquear los intentos posteriores. La persona puede inspeccionar el registro JSONL con un editor común.
 
-Ese es el recorrido acordado, y la suite suministrada del 2026-10-11 lo respalda: 14 pruebas, las 14 pasan, 0 canceladas, 0 omitidas, 0 todo, sobre Node v24.15.0. Las fuentes no conservan una transcripción de terminal del recorrido completo. [Evidencia](./docs/EVIDENCE.md) distingue el recorrido histórico del resultado actual.
+Ese es el recorrido acordado, y la suite registrada del 2026-10-11 lo respalda: 14 pruebas, las 14 pasan, 0 canceladas, 0 omitidas, 0 todo, sobre Node v24.15.0. Las fuentes no conservan una transcripción de terminal del recorrido completo. [Evidencia](./docs/EVIDENCE.md) distingue el recorrido histórico del resultado actual.
 
 ## Cómo se ve en la práctica
 
@@ -266,7 +266,7 @@ Estado de revisión: este proyecto no ha sido auditado. El kernel de Vespi sobre
 
 Llavero no establece cumplimiento legal, identidad, consentimiento real, derecho de un solicitante real a los datos, veracidad de una solicitud ni preparación para producción. El acuerdo cita la Ley 21.719 de Chile como contexto de diseño, la marca `NO VERIFICADO` y dice que durante esta fase no se leyeron la ley primaria ni se contrastó con ella la implementación. Ningún profesional del derecho revisó la posición jurídica del proyecto.
 
-La corrida suministrada está en verde para las 14 expectativas que nombra, y para nada más: no audita el proyecto, no vuelve reales los datos de ejemplo ni cubre el recorrido histórico. El acuerdo y el registro de fases describen el recorrido histórico completo, pero las fuentes públicas no contienen su transcripción original de terminal.
+La corrida registrada está en verde para las 14 expectativas que nombra, y para nada más: no audita el proyecto, no vuelve reales los datos de ejemplo ni cubre el recorrido histórico. El acuerdo y el registro de fases describen el recorrido histórico completo, pero las fuentes públicas no contienen su transcripción original de terminal.
 
 ## Cómo revisar este proyecto
 
