@@ -1,22 +1,22 @@
 Suite capture — llavero — 2026-10-11
-Command: node --test test/*.test.js (clean clone of commit 19e9d58, empty HOME, no network)
-Node: v24.15.0 · Kernel: Vespi 0.1.6, commit 95f2d614f4492056c8bb2cd951f08d1089027d4f, copied in vendor/vespi-kernel
+Command: node --test test/*.test.js (clean clone of commit dc524f2, empty HOME, no network)
+Node: v24.15.0 · Kernel: Vespi 0.1.6, commit 7767daa369e464b486ddf16b08b8985e59ec107d, copied in vendor/vespi-kernel
 Summary: tests 14 pass 14 fail 0 cancelled 0 skipped 0 todo 0 
 
-✔ el núcleo que consume Llavero es el corte fijado, módulo por módulo (51.0424ms)
-✔ el encabezado de los cinco módulos declara el mismo commit (1.3951ms)
-✔ pedir no es tener: sin llave, el acceso se bloquea y vuelve a la persona (12.882ms)
-✔ la llave vencida no abre y el bloqueo dice cuándo murió (9.1475ms)
-✔ la llave no viaja a otro destino y el bloqueo nombra los dos (8.677ms)
-✔ el alcance es un dato, no «los datos» (8.8608ms)
-✔ el presupuesto es un límite duro y se acumula entre accesos (19.64ms)
-✔ un acceso con otro propósito no abre: la llave dice para qué (7.9567ms)
-✔ la revocación cierra la puerta desde ese momento y no se reactiva sola (14.1632ms)
-✔ un portador no puede pasar más de lo que su llave le da (14.228ms)
-✔ el mismo acceso no se ejecuta dos veces: el segundo devuelve el recibo del primero (13.0903ms)
-✔ un recibo editado a mano no verifica (11.2473ms)
-✔ un verificador que solo cree al ejecutor no puede producir un verde en la auditoría (14.0013ms)
-✔ el registro es un archivo que la persona puede abrir sin Llavero (15.4322ms)
+✔ el núcleo que consume Llavero es el corte fijado, módulo por módulo (56.0788ms)
+✔ el encabezado de los cinco módulos declara el mismo commit (1.4699ms)
+✔ pedir no es tener: sin llave, el acceso se bloquea y vuelve a la persona (12.6528ms)
+✔ la llave vencida no abre y el bloqueo dice cuándo murió (9.3303ms)
+✔ la llave no viaja a otro destino y el bloqueo nombra los dos (8.2834ms)
+✔ el alcance es un dato, no «los datos» (8.0402ms)
+✔ el presupuesto es un límite duro y se acumula entre accesos (19.3212ms)
+✔ un acceso con otro propósito no abre: la llave dice para qué (8.1048ms)
+✔ la revocación cierra la puerta desde ese momento y no se reactiva sola (14.2084ms)
+✔ un portador no puede pasar más de lo que su llave le da (14.4617ms)
+✔ el mismo acceso no se ejecuta dos veces: el segundo devuelve el recibo del primero (13.1661ms)
+✔ un recibo editado a mano no verifica (11.4681ms)
+✔ un verificador que solo cree al ejecutor no puede producir un verde en la auditoría (14.0504ms)
+✔ el registro es un archivo que la persona puede abrir sin Llavero (13.3803ms)
 ℹ tests 14
 ℹ suites 0
 ℹ pass 14
@@ -24,4 +24,4 @@ Summary: tests 14 pass 14 fail 0 cancelled 0 skipped 0 todo 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 333.7135
+ℹ duration_ms 314.4628
